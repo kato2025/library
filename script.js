@@ -124,11 +124,11 @@ function toggleRead(event) {
 }
 
 // Manual addition of some books to the library for demonstration purposes
-const book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, true);
+const book1 = new Book("Managing Timber Exploitation with Decision Support Systems (DSS)", "Dr. Kato Samuel Namuene", 567, true);
 myLibrary.push(book1);
-const book2 = new Book("To Kill a Mockingbird", "Harper Lee", 281, false);
+const book2 = new Book("Forest Informatics with JavaScript", "Dr. Kato Samuel Namuene", 340, false);
 myLibrary.push(book2);
-const book3 = new Book("Oliver Twist", "Charles Dickens", 608, false);
+const book3 = new Book("HTML and CSS for Forest Informaticians", "Dr. Kato Samuel Namuene", 405, false);
 myLibrary.push(book3);
 
 // Initial rendering of the library
