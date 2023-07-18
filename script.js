@@ -100,8 +100,14 @@ function renderLibrary() {
    //Append row to table body
     tableBody.appendChild(row);
   });
-}
+  // Update total book count
+  const totalBooks = getTotalBooks();
+  document.getElementById("totalBooks").textContent = `${totalBooks}`;
 
+  // Update total books read count
+  const totalBooksRead = getTotalBooksRead();
+  document.getElementById("totalBooksRead").textContent = `${totalBooksRead}`;
+}
 // Toggle form visibility
 function toggleForm() {
   const form = document.getElementById("bookForm");
@@ -122,6 +128,16 @@ function toggleRead(event) {
   book.read = event.target.value === "1";
   renderLibrary();
 }
+// Calculate total number of books in library
+function getTotalBooks() {
+  return myLibrary.length;
+}
+
+// Calculate total number of books read
+function getTotalBooksRead() {
+  return myLibrary.filter((book) => book.read).length;
+}
+
 
 // Manual addition of some books to the library for demonstration purposes
 const book1 = new Book("Managing Timber Exploitation with Decision Support Systems (DSS)", "Dr. Kato Samuel Namuene", 567, true);

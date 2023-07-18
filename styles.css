@@ -18,7 +18,8 @@ body {
     font-family: Arial, sans-serif;
   }
 /* Header styles */
-.header {
+.header,
+.footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -37,7 +38,8 @@ body {
     display: flex;
     justify-content: center;
 }
-.mainHeading {
+.mainHeading,
+.footer {
     margin-top: var(--margin-top--);
     margin-bottom: var(--margin-bottom--);
 }
@@ -126,10 +128,34 @@ label {
     justify-content: center;
     align-items: center;
 }
+/* Display totals */
+#totals {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    font-size: 18px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: var(--white-text-colour--);
+    background: linear-gradient(90deg, var(--green-colour--) 43%, var(--blue-colour--)50%, var(--green-colour--) 60%, var(--blue-colour--)100%);
+}
+#totalBooks,
+#totalBooksRead,
+.totalsHeading {
+    font-size: 23px;
+    margin-left: 10px;
+}
+#totalBooks,
+#totalBooksRead{
+    border-radius: 100%;
+    color: yellow;
+
+    padding: 1px;
+}
 /* Table styles */
 table {
     border-collapse: collapse;
-    width: 70%;
+    width: 85%;
 }
 th,
 td {
@@ -152,4 +178,14 @@ td {
 }
 .delete-button {
     text-shadow: 1px 1px red;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 30px;
+    height: 50px;
+    font-size: 20px;
+    color: yellow;
 }
