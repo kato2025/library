@@ -86,16 +86,18 @@ function renderLibrary() {
     readCell.appendChild(readSlider);
 
     // Create delete button to enable book removal
-    const deleteBook = document.createElement("button");
-    deleteBook.innerHTML = '<i class="fas fa-trash"></i>';
-    deleteBook.classList.add("delete-button");
-    deleteBook.setAttribute("data-index", index);
-    deleteBook.addEventListener("click", removeBook);
-    actionCell.appendChild(deleteBook);
-    deleteBook.style.fontSize = "27px";
-    deleteBook.style.border = "none";
-    deleteBook.style.backgroundColor = "transparent";
-    deleteBook.style.color = "#0d98ba";
+// Create delete button to enable book removal
+  const deleteBook = document.createElement("button");
+  deleteBook.innerHTML = '<i class="fas fa-trash"></i>';
+  deleteBook.classList.add("delete-button");
+  deleteBook.dataset.index = index; 
+  deleteBook.addEventListener("click", removeBook);
+  actionCell.appendChild(deleteBook);
+  deleteBook.style.fontSize = "27px";
+  deleteBook.style.border = "none";
+  deleteBook.style.backgroundColor = "transparent";
+  deleteBook.style.color = "#0d98ba";
+
 
    //Append row to table body
     tableBody.appendChild(row);
@@ -111,12 +113,20 @@ function renderLibrary() {
 // Toggle form visibility
 function toggleForm() {
   const form = document.getElementById("bookForm");
+  const toggleButtonText = document.querySelector(".newBook").textContent;
+  
   form.classList.toggle("show-form");
+  
+  if (toggleButtonText === "ADD NEW BOOK") {
+    document.querySelector(".newBook").textContent = "STOP ADDING";
+  } else if (toggleButtonText === "STOP ADDING") {
+    document.querySelector(".newBook").textContent = "ADD NEW BOOK";
+  }
 }
 
 // Remove book from library
 function removeBook(event) {
-  const index = event.target.getAttribute("data-index");
+  const index = event.target.parentNode.getAttribute("data-index");
   myLibrary.splice(index, 1);
   renderLibrary();
 }

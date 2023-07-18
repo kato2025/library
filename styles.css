@@ -17,9 +17,9 @@ body {
     align-items: center;
     font-family: Arial, sans-serif;
   }
+
 /* Header styles */
-.header,
-.footer {
+.header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,8 +38,7 @@ body {
     display: flex;
     justify-content: center;
 }
-.mainHeading,
-.footer {
+.mainHeading {
     margin-top: var(--margin-top--);
     margin-bottom: var(--margin-bottom--);
 }
@@ -153,7 +152,14 @@ label {
     padding: 1px;
 }
 /* Table styles */
-table {
+.tableContainer {
+    height: 300px;
+    overflow: hidden;
+}
+.libraryTable {
+    position: sticky;
+    top: 0;
+    width: 100%;
     border-collapse: collapse;
     width: 85%;
 }
@@ -178,14 +184,4 @@ td {
 }
 .delete-button {
     text-shadow: 1px 1px red;
-}
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding-top: 30px;
-    height: 50px;
-    font-size: 20px;
-    color: yellow;
 }
