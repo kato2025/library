@@ -19,7 +19,8 @@ body {
   }
 
 /* Header styles */
-.header {
+.header,
+.footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,6 +29,11 @@ body {
     width: 100%;
     color: var(--white-text-colour--);
     background-color: var(--blue-colour--);
+}
+.footer {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
 }
 .siteLogo {
     width: 190px;
